@@ -49,12 +49,13 @@ public class FrontController extends HttpServlet {
 		Command command = map.get(page);
 		String viewPage = command.execute(request, response);
 
-		if (!viewPage.endsWith(".do")&& !viewPage.endsWith(".jsp")) {
-			viewPage = viewPage + ".tiles";
-		} else if (viewPage.endsWith(".jsp")) {   // tiles를 태우지 않음
-			viewPage = "/WEB-INF/views/" + viewPage;
+		if (!viewPage.endsWith(".do")) { // "home.do"
+			if (!viewPage.endsWith(".jsp")) {
+				viewPage = viewPage + ".tiles"; // "home/home"
+			} else {
+				viewPage = "/WEB-INF/views/" + viewPage; // "home/home.jsp"
+			}
 		}
-
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}
