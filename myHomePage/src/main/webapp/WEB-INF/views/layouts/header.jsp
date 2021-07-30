@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>hello</h1>
-	<a href="jsp/test.jsp">테스트하기</a>
-	<a href="WEB-INFtest1.jsp">WEB-INF 테스트</a>
+	상단메뉴
 </body>
 </html>

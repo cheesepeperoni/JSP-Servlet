@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- <h1>여기는 테스트 jsp 파일입니다</h1>
-	 <a href="../index.jsp">처음으로 가기</a>
+	처음 들어오면 바로 보여주는 곳
 </body>
 </html>

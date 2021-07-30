@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>나는 web-inf에 들어있습니다</h1>
+	<jsp:forward page="home.do" />
 </body>
 </html>
