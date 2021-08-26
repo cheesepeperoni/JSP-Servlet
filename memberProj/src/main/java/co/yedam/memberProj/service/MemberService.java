@@ -11,13 +11,8 @@ public class MemberService implements MemberMapper {
 	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private MemberMapper map = sqlSession.getMapper(MemberMapper.class);
 	@Override
-	public List<MemberVO> SelectList() {
-		return map.SelectList();
-	}
-
-	@Override
-	public List<MemberVO> SelectOne(MemberVO vo) {
-		return map.SelectOne(vo);
+	public List<MemberVO> selectList() {
+		return map.selectList();
 	}
 
 	@Override

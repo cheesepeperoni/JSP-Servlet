@@ -3,33 +3,31 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<properties resource="config/db.properties"></properties>
+   <properties resource="config/db.properties"></properties>
 
-	<settings>
-		<!-- Camel Case, Snake Case로만 다를 경우 resultMap을 안 써도 이 코드 쓰면 알아서 바꿔줌 -->
-		<setting name="mapUnderscoreToCamelCase" value="true" />
-		<setting name="jdbcTypeForNull" value="NULL" /> <!-- jdbcType=null 오류 시 해결 -->
-	</settings>
-	
-	<typeAliases>
-		<typeAlias type="co.yedam.memberProj.vo.MemberVO" alias="CategoryVO"/>
-		
+   <settings>
+      <!-- Camel Case, Snake Case로만 다를 경우 resultMap을 안 써도 이 코드 쓰면 알아서 바꿔줌 -->
+      <setting name="mapUnderscoreToCamelCase" value="true" />
+      <setting name="jdbcTypeForNull" value="NULL" /> <!-- jdbcType=null 오류 시 해결 -->
+   </settings>
+   
+   <typeAliases>
+      <typeAlias type="co.yedam.memberProj.vo.MemberVO" alias="MemberVO"/>
+   </typeAliases>
 
-	</typeAliases>
+   <environments default="development">
+      <environment id="development">
+         <transactionManager type="JDBC" />
+         <dataSource type="POOLED">
+            <property name="driver" value="${driver}" />
+            <property name="url" value="${url}" />
+            <property name="username" value="${username}" />
+            <property name="password" value="${password}" />
+         </dataSource>
+      </environment>
+   </environments>
 
-	<environments default="development">
-		<environment id="development">
-			<transactionManager type="JDBC" />
-			<dataSource type="POOLED">
-				<property name="driver" value="${driver}" />
-				<property name="url" value="${url}" />
-				<property name="username" value="${username}" />
-				<property name="password" value="${password}" />
-			</dataSource>
-		</environment>
-	</environments>
-
-	<mappers>
-		<mapper resource="co/yedam/memberProj/" />
-	</mappers>
+   <mappers>
+      <mapper resource="co/yedam/memberProj/service/member-map.xml" />
+   </mappers>
 </configuration>

@@ -3,9 +3,17 @@
 <mapper namespace="co.yedam.memberProj.service.MemberMapper">
 
 
-	<select id="SelectList">
-		select * from member;
+	<select id="selectList" resultType="MemberVO">
+		select * from lee_member
 	</select>
-
+	
+	<insert id="memInsert" parameterType="MemberVO">
+		insert into lee_member values(#{id},#{name},#{phone},#{birth},#{address})
+	</insert>
+	
+	<delete id="memDelete" parameterType="MemberVO">
+		delete from lee_member
+		where id = #{id}
+	</delete>
 
 </mapper>

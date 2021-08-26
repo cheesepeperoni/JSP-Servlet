@@ -1,15 +1,24 @@
 package co.yedam.memberProj.vo;
 
+import java.sql.Date;
+
 public class MemberVO {
 	private String id;
 	private String name;
 	private String phone;
+	private Date birth;
 	private String address;
 	
 	public MemberVO() {
 		// 기본생성자
 	}
 
+	public Date getBirth() {
+		return birth;
+	}
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
 	public String getId() {
 		return id;
 	}

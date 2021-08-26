@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.memberProj.command.MemberInsert;
 import co.yedam.memberProj.command.Phoebe;
+import co.yedam.memberProj.command.SelectList;
 import co.yedam.memberProj.common.Command;
 
 @WebServlet("*.do")
@@ -26,7 +28,8 @@ public class FrontController extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/phoebe.do", new Phoebe());
-		
+		map.put("/selectList.do", new SelectList());
+		map.put("/memInsert.do", new MemberInsert());
 		
 		
 		
