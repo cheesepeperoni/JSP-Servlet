@@ -26,7 +26,7 @@ public class MemberInsert implements Command {
 		dao.memInsert(vo);
 		
 		
-		return null;
+		return "phoebe";
 	}
 
 }

@@ -70,7 +70,7 @@
 			<div>
 				<button type="button" onclick="SelectList()">조회</button>
 				<button type="submit">등록</button>
-				<button type="button">수정</button>
+				<button type="reset">삭제</button>
 			</div>
 
 			<br>
